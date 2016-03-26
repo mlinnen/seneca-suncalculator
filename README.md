@@ -34,18 +34,21 @@ Calculates the sun and moon details for a specified date, lat, long.
 - _long_: the longitude for the calculation
 - _date_: the date for the calculation. If this is omitted then the current date is used.
 
+Returns an answer object with times as a result of the caclulation. 
+
 ### ACTION: role:suncalculator, cmd:eventcheck
 Calculates the sun and moon details for a specified date, time, lat and long.  Uses this date to emit an action if a sunrise or sunset is occuring.
 - _lat_: the latitude for the calculation
 - _long_: the longitude for the calculation
 - _date_: the date for the calculation. If this is omitted then the current date is used.
 
+Returns an answer of the following: none, sunrise or sunset.
 
 ## Roadmap
 These are a few items I think this module could use to make it more useful.  I don't have any plans on
 when the following will be done or in what order.
 - Convert this into a plugin
-- Add support for the eventcheck to only fire actions once for a given event/day
+- ~~Add support for the eventcheck to only fire actions once for a given event/day~~ the consumer will need to handle this
 - Allow for the _lat_ and _long_ be set as an options
 - Add tests
 - Add support for more suncalc actions

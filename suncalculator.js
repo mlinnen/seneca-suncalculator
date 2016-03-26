@@ -20,6 +20,7 @@ module.exports = function suncalculator(options) {
     })
 
     this.add({ role: 'suncalculator', cmd: 'eventcheck' }, function(msg, respond) {
+        var answer = 'none';
         var forDateTime = new Date();
         if (msg.date) {
             // Use the date passed in the msg
@@ -29,12 +30,12 @@ module.exports = function suncalculator(options) {
         var sunrise = new Date(data.sunrise);
         var sunset = new Date(data.sunset);
         if (forDateTime.getHours() == sunrise.getHours() && forDateTime.getMinutes() == sunrise.getMinutes()) {
-            this.act({ role: 'suncalculator', event: 'sunrise' }, console.log)
+            answer = 'sunrise';
         }
         else if (forDateTime.getHours() == sunset.getHours() && forDateTime.getMinutes() == sunset.getMinutes()) {
-            this.act({ role: 'suncalculator', event: 'sunset' }, console.log)
+            answer = 'sunset';
         }
-        respond(null, { answer: 'ok' });
+        respond(null, { answer: answer });
     })
 }
 
