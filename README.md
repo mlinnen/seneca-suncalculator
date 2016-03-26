@@ -45,6 +45,7 @@ Calculates the sun and moon details for a specified date, time, lat and long.  U
 These are a few items I think this module could use to make it more useful.  I don't have any plans on
 when the following will be done or in what order.
 - Convert this into a plugin
+- Add support for the eventcheck to only fire actions once for a given event/day
 - Allow for the _lat_ and _long_ be set as an options
 - Add tests
 - Add support for more suncalc actions
