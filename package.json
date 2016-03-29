@@ -4,7 +4,7 @@
   "description": "Calculates positions of the sun based on location and date",
   "main": "suncalculator.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "lab -P test -r console -v -m 3000 -t 76"
   },
   "keywords": [
     "Seneca",
@@ -13,7 +13,14 @@
   "author": "Mike Linnen <mlinnen@protosystem.net> (http://www.protosystem.net)",
   "license": "MIT",
   "dependencies": {
-    "seneca": "^2.0.0",
+    "lodash": "^4.6.1",
+    "seneca": "plugin",
     "suncalc": "^1.7.0"
+  },
+  "devDependencies": {
+    "async": "^2.0.0-rc.2",
+    "code": "^2.1.1",
+    "lab": "^10.3.0",
+    "seneca": "plugin"
   }
 }
