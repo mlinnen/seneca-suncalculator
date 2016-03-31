@@ -4,10 +4,11 @@
 var sunCalc = require('suncalc');
 
 module.exports = function suncalculator(options) {
-    
+
     var seneca = this;
-    
-    this.add({ role: 'suncalculator', cmd: 'calc' }, function(msg, respond) {
+    var role = options.role
+
+    this.add({ role: role, cmd: 'calc' }, function(msg, respond) {
         if (msg.date) {
             // Use the date passed in the msg
             respond(null, { times: sunCalc.getTimes(new Date(msg.date), msg.lat, msg.long), lat: msg.lat, long: msg.long, date: msg.date });
@@ -19,7 +20,7 @@ module.exports = function suncalculator(options) {
         }
     })
 
-    this.add({ role: 'suncalculator', cmd: 'eventcheck' }, function(msg, respond) {
+    this.add({ role: role, cmd: 'eventcheck' }, function(msg, respond) {
         var answer = 'none';
         var forDateTime = new Date();
         if (msg.date) {
@@ -37,6 +38,10 @@ module.exports = function suncalculator(options) {
         }
         respond(null, { answer: answer });
     })
+
+    return {
+        name: role
+    }
 }
 
 
