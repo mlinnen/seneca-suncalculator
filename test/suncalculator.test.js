@@ -71,7 +71,7 @@ suite('seneca-suncalculator calc suite tests ', function () {
       done(err)
     })
   })
-  test('suncalculator/eventcheck senset test', function (done) {
+  test('suncalculator/eventcheck sunset test', function (done) {
     si.act(_.extend({role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 19:38:44 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
       expect(err).to.not.exist()
       expect(data).to.exist()
