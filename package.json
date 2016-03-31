@@ -1,26 +1,30 @@
 {
-  "name": "seneca-suncalculator",
-  "version": "0.0.1",
-  "description": "Calculates positions of the sun based on location and date",
-  "main": "suncalculator.js",
-  "scripts": {
-    "test": "lab -P test -r console -v -m 3000 -t 76"
-  },
-  "keywords": [
-    "Seneca",
-    "sun"
-  ],
-  "author": "Mike Linnen <mlinnen@protosystem.net> (http://www.protosystem.net)",
-  "license": "MIT",
-  "dependencies": {
-    "lodash": "^4.6.1",
-    "seneca": "plugin",
-    "suncalc": "^1.7.0"
-  },
-  "devDependencies": {
-    "async": "^2.0.0-rc.2",
-    "code": "^2.1.1",
-    "lab": "^10.3.0",
-    "seneca": "plugin"
-  }
+    "name": "seneca-suncalculator",
+    "version": "0.0.1",
+    "description": "Calculates positions of the sun based on location and date",
+    "main": "suncalculator.js",
+    "scripts": {
+        "test": "lab -P test -r console -v -m 3000 -t 76"
+    },
+    "keywords": [
+        "Seneca",
+        "sun"
+    ],
+    "author": "Mike Linnen <mlinnen@protosystem.net> (http://www.protosystem.net)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/mlinnen/seneca-suncalculator.git"
+    },
+    "dependencies": {
+        "lodash": "^4.6.1",
+        "seneca": "plugin",
+        "suncalc": "^1.7.0"
+    },
+    "devDependencies": {
+        "async": "^2.0.0-rc.2",
+        "code": "^2.1.1",
+        "lab": "^10.3.0",
+        "seneca": "plugin"
+    }
 }
