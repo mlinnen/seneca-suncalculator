@@ -5,32 +5,26 @@ This plugin will expose actions to calculate the position of the sun or moon.
 
 ## Install
 Since Seneca and this service are built on top of [Node.js](https://nodejs.org) you will need to have it installed.
-Currently this plugin is not published to Node Package Manager repository so in order to be able to use this plugin you should clone it
- into a directory of your choice and run the following command:
+To install run the following commands:
 ```
-npm install
-```
-
-## Test
-```
-npm test
+npm install seneca
+npm install seneca-suncalculator
 ```
 
-## Examples
-Make sure you have already done the install steps to get the source and the dependencies installed on your system. 
+## Quick Example
+Make sure you have already done the install steps to get the seneca and seneca-suncalculator modules in your working folder. 
 
-1. Open up a command or shell prompt and navigate to the directory where you installed the source
-2. Run the following to invoke the calc action
+```
+var seneca = require('seneca')();
 
- ```
- node examples\suncalc-calc.js
- ```
+seneca.use('suncalculator');
 
-3. Run the following to invoke the eventcheck action
+// Uses today's date for the calcuation
+seneca.act({role: 'suncalculator', cmd: 'calc', lat: 35.227085, long: -80.843124}, console.log);
 
- ```
- node examples\suncalc-eventcheck.js
- ```
+// Uses a passed in date for the calcuation
+seneca.act({role: 'suncalculator', cmd: 'calc', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2017 22:40:23 GMT-0400 (Eastern Daylight Time)')}, console.log)
+```
  
 ## Actions
 
@@ -40,7 +34,7 @@ Calculates the sun and moon details for a specified date, lat, long.
 - _long_: the longitude for the calculation
 - _date_: the date for the calculation. If this is omitted then the current date is used.
 
-Returns an answer object with times as a result of the caclulation. 
+Returns an answer object with times as a result of the calculation. 
 
 ### ACTION: role:suncalculator, cmd:eventcheck
 Calculates the sun and moon details for a specified date, time, lat and long.  Uses this date to emit an action if a sunrise or sunset is occuring.
@@ -60,4 +54,4 @@ when the following will be done or in what order.
 - Add support for more suncalc actions
 - Add more examples
 - Add a build process
-- Make this an NPM package
+- ~~Make this an NPM package~~
