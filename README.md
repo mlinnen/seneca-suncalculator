@@ -5,9 +5,15 @@ This plugin will expose actions to calculate the position of the sun or moon.
 
 ## Install
 Since Seneca and this service are built on top of [Node.js](https://nodejs.org) you will need to have it installed.
-Clone this repository into a directory of your choice and run the following command:
+Currently this plugin is not published to Node Package Manager repository so in order to be able to use this plugin you should clone it
+ into a directory of your choice and run the following command:
 ```
 npm install
+```
+
+## Test
+```
+npm test
 ```
 
 ## Examples
@@ -50,7 +56,7 @@ when the following will be done or in what order.
 - Convert this into a plugin
 - ~~Add support for the eventcheck to only fire actions once for a given event/day~~ the consumer will need to handle this
 - Allow for the _lat_ and _long_ be set as an options
-- Add tests
+- ~~Add tests~~
 - Add support for more suncalc actions
 - Add more examples
 - Add a build process
