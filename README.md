@@ -2,6 +2,8 @@
 
 ## A plugin for [Seneca](http://senecajs.org) 
 This plugin will expose actions to calculate the position of the sun or moon. 
+[![npm version][npm-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
 
 ## Install
 Since Seneca and this service are built on top of [Node.js](https://nodejs.org) you will need to have it installed.
