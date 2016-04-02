@@ -4,9 +4,6 @@
 This plugin will expose actions to calculate the position of the sun or moon.
 
 [![npm version](https://badge.fury.io/js/seneca-suncalculator.svg)](https://badge.fury.io/js/seneca-suncalculator)
-[![npm version](https://badge.fury.io/js/seneca-suncalculator.svg)](https://badge.fury.io/js/seneca-suncalculator)
-
-[![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
 
 ## Install
