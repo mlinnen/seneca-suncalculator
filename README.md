@@ -57,3 +57,10 @@ when the following will be done or in what order.
 - Add more examples
 - Add a build process
 - ~~Make this an NPM package~~
+
+
+[npm-badge]: https://badge.fury.io/js/seneca-calculator.svg
+[npm-url]: https://badge.fury.io/js/seneca-suncalculator
+[travis-badge]: https://travis-ci.org/mlinnen/seneca-suncalculator.svg?branch=master
+[travis-url]: https://travis-ci.org/mlinnen/seneca-suncalculator
+
