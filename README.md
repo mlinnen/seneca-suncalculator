@@ -3,6 +3,9 @@
 ## A plugin for [Seneca](http://senecajs.org) 
 This plugin will expose actions to calculate the position of the sun or moon.
 
+[![npm version](https://badge.fury.io/js/seneca-suncalculator.svg)](https://badge.fury.io/js/seneca-suncalculator)
+[![npm version](https://badge.fury.io/js/seneca-suncalculator.svg)](https://badge.fury.io/js/seneca-suncalculator)
+
 [![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
 
@@ -40,7 +43,7 @@ Calculates the sun and moon details for a specified date, lat, long.
 Returns an answer object with times as a result of the calculation. 
 
 ### ACTION: role:suncalculator, cmd:eventcheck
-Calculates the sun and moon details for a specified date, time, lat and long.  Uses this date to emit an action if a sunrise or sunset is occuring.
+Calculates the sun and moon details for a specified date, time, lat and long.  Uses this date to return a value that indicates a sunrise or sunset is occuring.
 - _lat_: the latitude for the calculation
 - _long_: the longitude for the calculation
 - _date_: the date for the calculation. If this is omitted then the current date is used.
@@ -50,18 +53,17 @@ Returns an answer of the following: none, sunrise or sunset.
 ## Roadmap
 These are a few items I think this module could use to make it more useful.  I don't have any plans on
 when the following will be done or in what order.
-- Convert this into a plugin
+- ~~Convert this into a plugin~~
 - ~~Add support for the eventcheck to only fire actions once for a given event/day~~ the consumer will need to handle this
 - Allow for the _lat_ and _long_ be set as an options
 - ~~Add tests~~
 - Add support for more suncalc actions
 - Add more examples
-- Add a build process
+- ~~Add a build process~~
 - ~~Make this an NPM package~~
 
-
+https://badge.fury.io/js/seneca-suncalculator
 [npm-badge]: https://badge.fury.io/js/seneca-calculator.svg
 [npm-url]: https://badge.fury.io/js/seneca-suncalculator
 [travis-badge]: https://travis-ci.org/mlinnen/seneca-suncalculator.svg?branch=master
 [travis-url]: https://travis-ci.org/mlinnen/seneca-suncalculator
-
