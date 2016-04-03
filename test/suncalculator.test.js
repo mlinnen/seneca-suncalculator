@@ -37,7 +37,7 @@ suite('seneca-suncalculator calc suite tests ', function () {
   test('suncalculator/calc with date test', function (done) {
     si.act(_.extend({role: 'suncalculator', cmd: 'calc', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 07:20:00 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
 
-      //console.log(data.times);
+      console.log(data.times);
       
       expect(err).to.not.exist();
       expect(data).to.exist();
