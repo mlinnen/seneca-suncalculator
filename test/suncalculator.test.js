@@ -149,5 +149,68 @@ suite('seneca-suncalculator calc suite tests ', function () {
       done(err);
     });
   });
+  test('suncalculator/eventcheck dawn test', function (done) {
+    si.act(_.extend({role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 6:57:56 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
+      expect(err).to.not.exist();
+      expect(data).to.exist();
+      expect(data.answer).to.exist();
+      expect(data.answer).to.equal('dawn');
+      done(err);
+    });
+  });
+  test('suncalculator/eventcheck dusk test', function (done) {
+    si.act(_.extend({role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 20:04:06 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
+      expect(err).to.not.exist();
+      expect(data).to.exist();
+      expect(data.answer).to.exist();
+      expect(data.answer).to.equal('dusk');
+      done(err);
+    });
+  });
+  test('suncalculator/eventcheck sunriseEnd test', function (done) {
+    si.act(_.extend({role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 7:25:54 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
+      expect(err).to.not.exist();
+      expect(data).to.exist();
+      expect(data.answer).to.exist();
+      expect(data.answer).to.equal('sunriseEnd');
+      done(err);
+    });
+  });
+  test('suncalculator/eventcheck sunsetStart test', function (done) {
+    si.act(_.extend({role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 19:36:07 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
+      expect(err).to.not.exist();
+      expect(data).to.exist();
+      expect(data.answer).to.exist();
+      expect(data.answer).to.equal('sunsetStart');
+      done(err);
+    });
+  });
+  test('suncalculator/eventcheck night test', function (done) {
+    si.act(_.extend({role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 21:03:54 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
+      expect(err).to.not.exist();
+      expect(data).to.exist();
+      expect(data.answer).to.exist();
+      expect(data.answer).to.equal('night');
+      done(err);
+    });
+  });
+  test('suncalculator/eventcheck nightEnd test', function (done) {
+    si.act(_.extend({role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 5:58:08 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
+      expect(err).to.not.exist();
+      expect(data).to.exist();
+      expect(data.answer).to.exist();
+      expect(data.answer).to.equal('nightEnd');
+      done(err);
+    });
+  });
+  test('suncalculator/eventcheck solarNoon test', function (done) {
+    si.act(_.extend({role: 'suncalculator', cmd: 'eventcheck', lat: 35.227085, long: -80.843124, date: new Date('Wed Mar 23 2016 13:31:01 GMT-0400 (Eastern Daylight Time)')}), function (err, data) {
+      expect(err).to.not.exist();
+      expect(data).to.exist();
+      expect(data.answer).to.exist();
+      expect(data.answer).to.equal('solarNoon');
+      done(err);
+    });
+  });
 
 });

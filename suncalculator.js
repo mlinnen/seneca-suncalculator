@@ -30,11 +30,40 @@ module.exports = function suncalculator(options) {
         var data = sunCalc.getTimes(forDateTime, msg.lat, msg.long);
         var sunrise = new Date(data.sunrise);
         var sunset = new Date(data.sunset);
+        var dawn = new Date(data.dawn);
+        var dusk = new Date(data.dusk);
+        var sunriseEnd = new Date(data.sunriseEnd);
+        var sunsetStart = new Date(data.sunsetStart);
+        var night = new Date(data.night);
+        var nightEnd = new Date(data.nightEnd);
+        var solarNoon = new Date(data.solarNoon);
+        
         if (forDateTime.getHours() == sunrise.getHours() && forDateTime.getMinutes() == sunrise.getMinutes()) {
             answer = 'sunrise';
         }
         else if (forDateTime.getHours() == sunset.getHours() && forDateTime.getMinutes() == sunset.getMinutes()) {
             answer = 'sunset';
+        }
+        else if (forDateTime.getHours() == dawn.getHours() && forDateTime.getMinutes() == dawn.getMinutes()) {
+            answer = 'dawn';
+        }
+        else if (forDateTime.getHours() == dusk.getHours() && forDateTime.getMinutes() == dusk.getMinutes()) {
+            answer = 'dusk';
+        }
+        else if (forDateTime.getHours() == sunriseEnd.getHours() && forDateTime.getMinutes() == sunriseEnd.getMinutes()) {
+            answer = 'sunriseEnd';
+        }
+        else if (forDateTime.getHours() == sunsetStart.getHours() && forDateTime.getMinutes() == sunsetStart.getMinutes()) {
+            answer = 'sunsetStart';
+        }
+        else if (forDateTime.getHours() == night.getHours() && forDateTime.getMinutes() == night.getMinutes()) {
+            answer = 'night';
+        }
+        else if (forDateTime.getHours() == nightEnd.getHours() && forDateTime.getMinutes() == nightEnd.getMinutes()) {
+            answer = 'nightEnd';
+        }
+        else if (forDateTime.getHours() == solarNoon.getHours() && forDateTime.getMinutes() == solarNoon.getMinutes()) {
+            answer = 'solarNoon';
         }
         respond(null, { answer: answer });
     })
