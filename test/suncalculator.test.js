@@ -46,27 +46,77 @@ suite('seneca-suncalculator calc suite tests ', function () {
       expect(err).to.not.exist();
       expect(data).to.exist();
       expect(data.times).to.exist();
+      
+      // Sunrise
       var actualDate = new Date(data.times.sunrise);
       var expectedDate = new Date(Date.UTC(2016,2,23,11,23,18,0));
-      console.log(expectedDate);
-      console.log(actualDate);
       expect(String(actualDate)).to.equal(String(expectedDate));
-      /*
-      expect(String(data.times.sunset)).to.equal('Wed Mar 23 2016 19:38:44 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.solarNoon)).to.equal('Wed Mar 23 2016 13:31:01 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.nadir)).to.equal('Wed Mar 23 2016 01:31:01 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.sunriseEnd)).to.equal('Wed Mar 23 2016 07:25:54 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.sunsetStart)).to.equal('Wed Mar 23 2016 19:36:07 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.dawn)).to.equal('Wed Mar 23 2016 06:57:56 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.dusk)).to.equal('Wed Mar 23 2016 20:04:06 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.nauticalDawn)).to.equal('Wed Mar 23 2016 06:28:15 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.nauticalDusk)).to.equal('Wed Mar 23 2016 20:33:47 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.nightEnd)).to.equal('Wed Mar 23 2016 05:58:08 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.night)).to.equal('Wed Mar 23 2016 21:03:54 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.goldenHourEnd)).to.equal('Wed Mar 23 2016 07:56:46 GMT-0400 (Eastern Daylight Time)');
-      expect(String(data.times.goldenHour)).to.equal('Wed Mar 23 2016 19:05:16 GMT-0400 (Eastern Daylight Time)');
-      */
       
+      // Sunset
+      actualDate = new Date(data.times.sunset);
+      expectedDate = new Date(Date.UTC(2016,2,23,23,38,44,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+      
+      // SolarNoon
+      actualDate = new Date(data.times.solarNoon);
+      expectedDate = new Date(Date.UTC(2016,2,23,17,31,1,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // nadir
+      actualDate = new Date(data.times.nadir);
+      expectedDate = new Date(Date.UTC(2016,2,23,5,31,1,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // sunriseEnd
+      actualDate = new Date(data.times.sunriseEnd);
+      expectedDate = new Date(Date.UTC(2016,2,23,11,25,54,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // sunsetStart
+      actualDate = new Date(data.times.sunsetStart);
+      expectedDate = new Date(Date.UTC(2016,2,23,23,36,7,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // dawn
+      actualDate = new Date(data.times.dawn);
+      expectedDate = new Date(Date.UTC(2016,2,23,10,57,56,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // dusk
+      actualDate = new Date(data.times.dusk);
+      expectedDate = new Date(Date.UTC(2016,2,24,0,4,6,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // nauticalDawn
+      actualDate = new Date(data.times.nauticalDawn);
+      expectedDate = new Date(Date.UTC(2016,2,23,10,28,15,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // nauticalDusk
+      actualDate = new Date(data.times.nauticalDusk);
+      expectedDate = new Date(Date.UTC(2016,2,24,0,33,47,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // nightEnd
+      actualDate = new Date(data.times.nightEnd);
+      expectedDate = new Date(Date.UTC(2016,2,23,9,58,8,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // night
+      actualDate = new Date(data.times.night);
+      expectedDate = new Date(Date.UTC(2016,2,24,1,3,54,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // goldenHourEnd
+      actualDate = new Date(data.times.goldenHourEnd);
+      expectedDate = new Date(Date.UTC(2016,2,23,11,56,46,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
+      // goldenHour
+      actualDate = new Date(data.times.goldenHour);
+      expectedDate = new Date(Date.UTC(2016,2,23,23,5,16,0));
+      expect(String(actualDate)).to.equal(String(expectedDate));
+
       done(err);
     });
   });
