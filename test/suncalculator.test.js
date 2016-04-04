@@ -37,12 +37,6 @@ suite('seneca-suncalculator calc suite tests ', function () {
   test('suncalculator/calc with date test', function (done) {
     si.act(_.extend({role: 'suncalculator', cmd: 'calc', lat: 35.227085, long: -80.843124, date: Date.UTC(2016,2,23,11,20,0,0)}), function (err, data) {
 
-      console.log(data.date);
-      console.log(data.times);
-      
-      var offset = new Date().getTimezoneOffset();
-      console.log(offset);
-      
       expect(err).to.not.exist();
       expect(data).to.exist();
       expect(data.times).to.exist();
