@@ -3,8 +3,8 @@
 ## A plugin for [Seneca](http://senecajs.org) 
 This plugin will expose actions to calculate the position of the sun or moon.
 
-[![npm version][npm-badge]][npm-url]
-[![Build Status][travis-badge]][travis-url]
+[![npm version](https://badge.fury.io/js/seneca-suncalculator.svg)](https://www.npmjs.com/package/seneca-suncalculator)
+[![Build Status](https://travis-ci.org/mlinnen/seneca-suncalculator.svg)](https://travis-ci.org/mlinnen/seneca-suncalculator)
 
 ## Install
 Since Seneca and this service are built on top of [Node.js](https://nodejs.org) you will need to have it installed.
@@ -53,8 +53,3 @@ when the following will be done or in what order.
 - Allow for the _lat_ and _long_ be set as an options
 - Add support for more suncalc actions
 
-
-[npm-badge]: https://badge.fury.io/js/seneca-suncalculator.svg
-[npm-url]: https://badge.fury.io/js/seneca-suncalculator
-[travis-badge]: https://travis-ci.org/mlinnen/seneca-suncalculator.svg
-[travis-url]: https://travis-ci.org/mlinnen/seneca-suncalculator
