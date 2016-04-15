@@ -46,7 +46,7 @@ Calculates the sun and moon details for a specified date, lat, long and numberOf
 - _date_: the date for the calculation. If this is omitted then the current date is used.
 - _numberOfDays_: the number of days to calculate the times for starting with the _date_ as the first day.
 
-Returns an answer object with times as a result of the calculation. 
+Returns an answer object with an array of times as a result of the calculation. 
 
 ### ACTION: role:suncalculator, cmd:eventcheck
 Calculates the sun and moon details for a specified date, time, lat and long.  Uses this date & time to return a value that indicates if a specific event is currently occuring.
