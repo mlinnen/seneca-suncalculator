@@ -3,8 +3,8 @@
 ## A plugin for [Seneca](http://senecajs.org) 
 This plugin will expose actions to calculate the position of the sun or moon.
 
-[![npm version](https://badge.fury.io/js/seneca-suncalculator.svg)](https://badge.fury.io/js/seneca-suncalculator)
-[![Build Status][travis-badge]][travis-url]
+[![npm version](https://badge.fury.io/js/seneca-suncalculator.svg)](https://www.npmjs.com/package/seneca-suncalculator)
+[![Build Status](https://travis-ci.org/mlinnen/seneca-suncalculator.svg)](https://travis-ci.org/mlinnen/seneca-suncalculator)
 
 ## Install
 Since Seneca and this service are built on top of [Node.js](https://nodejs.org) you will need to have it installed.
@@ -39,6 +39,15 @@ Calculates the sun and moon details for a specified date, lat, long.
 
 Returns an answer object with times as a result of the calculation. 
 
+### ACTION: role:suncalculator, cmd:calcdays
+Calculates the sun and moon details for a specified date, lat, long and numberOfDays.
+- _lat_: the latitude for the calculation
+- _long_: the longitude for the calculation
+- _date_: the date for the calculation. If this is omitted then the current date is used.
+- _numberOfDays_: the number of days to calculate the times for starting with the _date_ as the first day.
+
+Returns an answer object with times as a result of the calculation. 
+
 ### ACTION: role:suncalculator, cmd:eventcheck
 Calculates the sun and moon details for a specified date, time, lat and long.  Uses this date & time to return a value that indicates if a specific event is currently occuring.
 - _lat_: the latitude for the calculation
@@ -53,8 +62,3 @@ when the following will be done or in what order.
 - Allow for the _lat_ and _long_ be set as an options
 - Add support for more suncalc actions
 
-https://badge.fury.io/js/seneca-suncalculator
-[npm-badge]: https://badge.fury.io/js/seneca-calculator.svg
-[npm-url]: https://badge.fury.io/js/seneca-suncalculator
-[travis-badge]: https://travis-ci.org/mlinnen/seneca-suncalculator.svg?branch=master
-[travis-url]: https://travis-ci.org/mlinnen/seneca-suncalculator

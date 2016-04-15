@@ -1,11 +1,11 @@
 {
   "name": "seneca-suncalculator",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Calculates positions of the sun based on location and date",
   "main": "suncalculator.js",
   "scripts": {
-    "test": "lab -P test -r console -v -m 3000 -t 76",
-    "coverage": "lab -s test/*.test.js -r lcov | coveralls"
+    "test": "lab -P test -r console -v -m 3000 -t 76 -l",
+    "coverage": "lab -s test/*.test.js -r lcov -l | coveralls"
   },
   "keywords": [
     "seneca",
