@@ -20,6 +20,28 @@ module.exports = function suncalculator(options) {
         }
     })
 
+    this.add({ role: role, cmd: 'calcdays' }, function(msg, respond) {
+        var results = [];
+        if (msg.date) {
+            // Use the date passed in the msg
+            var date = new Date(msg.date);
+            for (i = 0; i < msg.numberOfDays; i++) {
+                results[i] = { times: sunCalc.getTimes(date, msg.lat, msg.long), lat: msg.lat, long: msg.long, date: date };
+                date = addDays(date,i);
+            }
+            respond(null, results);
+        }
+        else {
+            // Use today's date
+            var date = new Date();
+            for (i = 0; i < msg.numberOfDays; i++) {
+                results[i] = { times: sunCalc.getTimes(date, msg.lat, msg.long), lat: msg.lat, long: msg.long, date: date };
+                date = addDays(date,1);
+            }
+            respond(null, results);
+        }
+    })
+
     this.add({ role: role, cmd: 'eventcheck' }, function(msg, respond) {
         var answer = 'none';
         var forDateTime = new Date();
@@ -37,7 +59,7 @@ module.exports = function suncalculator(options) {
         var night = new Date(data.night);
         var nightEnd = new Date(data.nightEnd);
         var solarNoon = new Date(data.solarNoon);
-        
+
         if (forDateTime.getHours() == sunrise.getHours() && forDateTime.getMinutes() == sunrise.getMinutes()) {
             answer = 'sunrise';
         }
@@ -67,7 +89,13 @@ module.exports = function suncalculator(options) {
         }
         respond(null, { answer: answer });
     })
-
+    
+    function addDays(date, days) {
+        var result = new Date(date);
+        result.setDate(result.getDate() + days);
+        return result;
+    }
+    
     return {
         name: role
     }
