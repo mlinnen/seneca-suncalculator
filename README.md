@@ -39,11 +39,21 @@ Calculates the sun and moon details for a specified date, lat, long.
 
 Returns an answer object with times as a result of the calculation. 
 
+### ACTION: role:suncalculator, cmd:calcdays
+Calculates the sun and moon details for a specified date, lat, long and numberOfDays.
+- _lat_: the latitude for the calculation
+- _long_: the longitude for the calculation
+- _date_: the date for the calculation. If this is omitted then the current date is used.
+- _numberOfDays_: the number of days to calculate the times for starting with the _date_ as the first day.
+
+Returns an answer object with an array of times as a result of the calculation. 
+
 ### ACTION: role:suncalculator, cmd:eventcheck
 Calculates the sun and moon details for a specified date, time, lat and long.  Uses this date & time to return a value that indicates if a specific event is currently occuring.
 - _lat_: the latitude for the calculation
 - _long_: the longitude for the calculation
 - _date_: the date for the calculation. If this is omitted then the current date is used.
+- _offset_: optional parameter to add an offset in minutes (+ or -) to the check so that you can delay the eventcheck trigger.
 
 Returns an answer of the following: none, sunrise, sunset, dawn, dusk, night, sunriseEnd, sunsetStart, nightEnd, or solarNoon.
 
