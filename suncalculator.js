@@ -45,20 +45,33 @@ module.exports = function suncalculator(options) {
     this.add({ role: role, cmd: 'eventcheck' }, function(msg, respond) {
         var answer = 'none';
         var forDateTime = new Date();
+        var offset = 0;
         if (msg.date) {
             // Use the date passed in the msg
             forDateTime = new Date(msg.date);
         }
+        if (msg.offset) {
+            offset = msg.offset;
+        }
         var data = sunCalc.getTimes(forDateTime, msg.lat, msg.long);
         var sunrise = new Date(data.sunrise);
+        sunrise.setMinutes(sunrise.getMinutes() + offset);
         var sunset = new Date(data.sunset);
+        sunset.setMinutes(sunset.getMinutes() + offset);
         var dawn = new Date(data.dawn);
+        dawn.setMinutes(dawn.getMinutes() + offset);
         var dusk = new Date(data.dusk);
+        dusk.setMinutes(dusk.getMinutes() + offset);
         var sunriseEnd = new Date(data.sunriseEnd);
+        sunriseEnd.setMinutes(sunriseEnd.getMinutes() + offset);
         var sunsetStart = new Date(data.sunsetStart);
+        sunsetStart.setMinutes(sunsetStart.getMinutes() + offset);
         var night = new Date(data.night);
+        night.setMinutes(night.getMinutes() + offset);
         var nightEnd = new Date(data.nightEnd);
+        nightEnd.setMinutes(nightEnd.getMinutes() + offset);
         var solarNoon = new Date(data.solarNoon);
+        solarNoon.setMinutes(solarNoon.getMinutes() + offset);
 
         if (forDateTime.getHours() == sunrise.getHours() && forDateTime.getMinutes() == sunrise.getMinutes()) {
             answer = 'sunrise';
@@ -90,6 +103,7 @@ module.exports = function suncalculator(options) {
         respond(null, { answer: answer });
     })
     
+
     function addDays(date, days) {
         var result = new Date(date);
         result.setDate(result.getDate() + days);

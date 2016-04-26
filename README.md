@@ -53,6 +53,7 @@ Calculates the sun and moon details for a specified date, time, lat and long.  U
 - _lat_: the latitude for the calculation
 - _long_: the longitude for the calculation
 - _date_: the date for the calculation. If this is omitted then the current date is used.
+- _offset_: optional parameter to add an offset in minutes (+ or -) to the check so that you can delay the eventcheck trigger.
 
 Returns an answer of the following: none, sunrise, sunset, dawn, dusk, night, sunriseEnd, sunsetStart, nightEnd, or solarNoon.
 
